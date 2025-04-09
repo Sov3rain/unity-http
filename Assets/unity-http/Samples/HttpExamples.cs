@@ -2,11 +2,26 @@ using System;
 using System.Threading.Tasks;
 using UnityHttp;
 using UnityEngine;
+using UnityHttp.Service;
 
 public class HttpExamples : MonoBehaviour
 {
     [ContextMenu(nameof(SimpleGet))]
-    private async Task SimpleGet()
+    private void SimpleGet()
+    {
+        Http.Get("https://jsonplaceholder.typicode.com/todos/1")
+            .OnSuccess(HandleSuccess)
+            .Send();
+    }
+
+    private static void HandleSuccess(HttpResponse res)
+    {
+        var todo = JsonUtility.FromJson<Todo>(res.Text);
+        Debug.Log(todo);
+    }
+
+    [ContextMenu(nameof(SimpleGetAsync))]
+    private async Task SimpleGetAsync()
     {
         var response = await Http.Get("https://jsonplaceholder.typicode.com/todos/1").SendAsync();
         var todo = JsonUtility.FromJson<Todo>(response.Text);
@@ -27,8 +42,8 @@ public class HttpExamples : MonoBehaviour
         }
     }
 
-    [ContextMenu(nameof(ReuseRequest))]
-    private async Task ReuseRequest()
+    [ContextMenu(nameof(ReuseRequestThrows))]
+    private async Task ReuseRequestThrows()
     {
         var request = Http.Get("https://jsonplaceholder.typicode.com/todos/1");
         try
@@ -41,7 +56,11 @@ public class HttpExamples : MonoBehaviour
         }
         catch (HttpException e)
         {
-            Debug.LogError(e.Response.StatusCode);
+            Debug.LogError(e.Response.Error);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
         }
     }
 }
@@ -53,6 +72,6 @@ public class Todo
     public int id;
     public string title;
     public bool completed;
-    
+
     public override string ToString() => $"{title}: {completed}";
 }
