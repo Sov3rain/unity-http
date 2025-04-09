@@ -79,9 +79,9 @@ namespace UnityHttp.Service.Unity
         }
 
         public IEnumerator Send(
-            IHttpRequest request, 
+            IHttpRequest request,
             Action<HttpResponse> onSuccess = null,
-            Action<HttpResponse> onError = null, 
+            Action<HttpResponse> onError = null,
             Action<HttpResponse> onNetworkError = null)
         {
             var unityHttpRequest = (UnityHttpRequest)request;
