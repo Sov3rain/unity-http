@@ -56,12 +56,7 @@ namespace Duck.Http.Service.Unity
 		{
 			return Post(uri, Encoding.UTF8.GetBytes(json), "application/json");
 		}
-
-		public IHttpRequest PostJson<T>(string uri, T payload) where T : class
-		{
-			return PostJson(uri, JsonUtility.ToJson(payload));
-		}
-
+		
 		public IHttpRequest Put(string uri, byte[] bodyData)
 		{
 			return new UnityHttpRequest(UnityWebRequest.Put(uri, bodyData));

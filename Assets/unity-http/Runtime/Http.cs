@@ -136,12 +136,6 @@ namespace Duck.Http
 			return Instance.service.PostJson(uri, json);
 		}
 
-		/// <see cref="Duck.Http.Service.IHttpService.PostJson{T}(string, T)"/>
-		public static IHttpRequest PostJson<T>(string uri, T payload) where T : class
-		{
-			return Instance.service.PostJson(uri, payload);
-		}
-
 		/// <see cref="Duck.Http.Service.IHttpService.Put(string, byte[])"/>
 		public static IHttpRequest Put(string uri, byte[] bodyData)
 		{

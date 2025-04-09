@@ -72,14 +72,6 @@ namespace Duck.Http.Service
 		IHttpRequest PostJson(string uri, string json);
 
 		/// <summary>
-		/// Creates a HttpRequest configured to send json data to a server via HTTP POST.
-		/// </summary>
-		/// <param name="uri">The target URI to which json data will be transmitted.</param>
-		/// <param name="payload">The object to be parsed to json data.</param>
-		/// <returns>A HttpRequest configured to send json data to uri via POST.</returns>
-		IHttpRequest PostJson<T>(string uri, T payload) where T : class;
-
-		/// <summary>
 		/// Creates a HttpRequest configured to upload raw data to a remote server via HTTP PUT.
 		/// </summary>
 		/// <param name="uri">The URI to which the data will be sent.</param>
