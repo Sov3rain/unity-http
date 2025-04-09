@@ -1,14 +1,12 @@
 {
-    "name": "Duck.Http.EditMode.Tests",
+    "name": "UnityHttp.Tests.PlayMode",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "UnityHttp"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
