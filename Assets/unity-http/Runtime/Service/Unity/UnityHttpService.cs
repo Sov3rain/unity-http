@@ -78,8 +78,11 @@ namespace UnityHttp.Service.Unity
             return new UnityHttpRequest(UnityWebRequest.Head(uri));
         }
 
-        public IEnumerator Send(IHttpRequest request, Action<HttpResponse> onSuccess = null,
-            Action<HttpResponse> onError = null, Action<HttpResponse> onNetworkError = null)
+        public IEnumerator Send(
+            IHttpRequest request, 
+            Action<HttpResponse> onSuccess = null,
+            Action<HttpResponse> onError = null, 
+            Action<HttpResponse> onNetworkError = null)
         {
             var unityHttpRequest = (UnityHttpRequest)request;
             var unityWebRequest = unityHttpRequest.UnityWebRequest;
@@ -105,7 +108,7 @@ namespace UnityHttp.Service.Unity
         public void Abort(IHttpRequest request)
         {
             var unityHttpRequest = request as UnityHttpRequest;
-            if (unityHttpRequest?.UnityWebRequest != null && !unityHttpRequest.UnityWebRequest.isDone)
+            if (unityHttpRequest?.UnityWebRequest is { isDone: false })
             {
                 unityHttpRequest.UnityWebRequest.Abort();
             }
