@@ -1,6 +1,7 @@
 using System;
+using UnityHttp.Service;
 
-namespace Duck.Http.Service.Unity
+namespace UnityHttp
 {
     public class HttpException : Exception
     {

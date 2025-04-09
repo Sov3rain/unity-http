@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace Duck.Http
+namespace UnityHttp
 {
 	/// <summary>
 	/// A utility class for http.

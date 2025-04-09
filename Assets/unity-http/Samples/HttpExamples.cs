@@ -1,5 +1,4 @@
-using Duck.Http;
-using Duck.Http.Service.Unity;
+using UnityHttp;
 using UnityEngine;
 
 public class HttpExamples : MonoBehaviour

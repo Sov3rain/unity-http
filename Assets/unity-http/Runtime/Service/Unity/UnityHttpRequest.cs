@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine.Networking;
 
-namespace Duck.Http.Service.Unity
+namespace UnityHttp.Service.Unity
 {
     public class UnityHttpRequest : IHttpRequest, IUpdateProgress
     {

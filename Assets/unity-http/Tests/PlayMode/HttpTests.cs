@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using UnityEngine;
 
-namespace Duck.Http.Tests.PlayMode
+namespace UnityHttp.Tests.PlayMode
 {
 	[TestFixture]
 	public class HttpTests

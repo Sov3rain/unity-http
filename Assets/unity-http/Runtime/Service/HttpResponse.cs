@@ -3,7 +3,7 @@ using UnityEngine;
 using static UnityEngine.Networking.UnityWebRequest;
 using static UnityEngine.Networking.UnityWebRequest.Result;
 
-namespace Duck.Http.Service
+namespace UnityHttp.Service
 {
     public class HttpResponse
     {

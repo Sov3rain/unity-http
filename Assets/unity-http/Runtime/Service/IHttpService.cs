@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Duck.Http.Service
+namespace UnityHttp.Service
 {
 	public interface IHttpService
 	{

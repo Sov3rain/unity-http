@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace Duck.Http.Tests.EditMode
+namespace UnityHttp.Tests.EditMode
 {
 	[TestFixture]
 	public class UtilsTests

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using static UnityEngine.Networking.UnityWebRequest.Result;
 
-namespace Duck.Http.Service.Unity
+namespace UnityHttp.Service.Unity
 {
     public class UnityHttpService : IHttpService
     {

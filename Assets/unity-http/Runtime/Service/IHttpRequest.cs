@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Duck.Http.Service
+namespace UnityHttp.Service
 {
     public interface IHttpRequest
     {

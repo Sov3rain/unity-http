@@ -1,4 +1,4 @@
-﻿namespace Duck.Http.Service.Unity
+﻿namespace UnityHttp.Service.Unity
 {
 	public interface IUpdateProgress
 	{
