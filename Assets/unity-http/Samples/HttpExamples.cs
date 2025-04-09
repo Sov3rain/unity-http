@@ -1,5 +1,5 @@
 using Duck.Http;
-using Duck.Http.Service;
+using Duck.Http.Service.Unity;
 using UnityEngine;
 
 public class HttpExamples : MonoBehaviour
@@ -12,13 +12,9 @@ public class HttpExamples : MonoBehaviour
             var response = await Http.Get("https://jsonplaceholder.typicode.com/todosa/1").SendAsync();
             Debug.Log(response.Text);
         }
-        catch (ProtocolException e)
+        catch (HttpException e)
         {
-            Debug.LogError(e.Error.StatusCode);
-        }
-        catch (ConnectionException e)
-        {
-            Debug.LogError(e.Error.Text);
+            Debug.LogError(e.Response.StatusCode);
         }
     }
 
@@ -34,13 +30,9 @@ public class HttpExamples : MonoBehaviour
             var response2 = await request.SendAsync();
             Debug.Log(response2.Text);
         }
-        catch (ProtocolException e)
+        catch (HttpException e)
         {
-            Debug.LogError(e.Error.StatusCode);
+            Debug.LogError(e.Response.StatusCode);
         }
-        catch (ConnectionException e)
-        {
-            Debug.LogError(e.Error.Text);
-        }   
     }
 }

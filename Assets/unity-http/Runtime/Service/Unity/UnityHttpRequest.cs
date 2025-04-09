@@ -118,8 +118,8 @@ namespace Duck.Http.Service.Unity
         {
             var tcs = new TaskCompletionSource<HttpResponse>();
             onSuccess = res => tcs.TrySetResult(res);
-            onError = res => tcs.TrySetException(new ProtocolException(res));
-            onNetworkError = res => tcs.TrySetException(new ConnectionException(res));
+            onError = res => tcs.TrySetException(new HttpException(res));
+            onNetworkError = res => tcs.TrySetException(new HttpException(res));
 
             Send();
 
