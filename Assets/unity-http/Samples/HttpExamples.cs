@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using UnityHttp;
 using UnityEngine;
@@ -62,6 +63,15 @@ public class HttpExamples : MonoBehaviour
         {
             Debug.LogError(e.Message);
         }
+    }
+
+    [ContextMenu(nameof(GetFile))]
+    private void GetFile()
+    {
+        string dir = Application.persistentDataPath;
+        string filePath = Path.Combine(dir, "todo1.json");
+        Http.GetFile("https://jsonplaceholder.typicode.com/todos/1", filePath).Send();
+        Application.OpenURL(dir);
     }
 }
 
