@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using static UnityEngine.Networking.UnityWebRequest.Result;
@@ -18,6 +20,11 @@ namespace UnityHttp.Service.Unity
         public IHttpRequest GetTexture(string uri)
         {
             return new UnityHttpRequest(UnityWebRequestTexture.GetTexture(uri));
+        }
+
+        public IHttpRequest GetFile(string uri, string filePath)
+        {
+            return Get(uri).OnSuccess(res => HttpUtils.WriteFile(res.Data, filePath));
         }
 
         public IHttpRequest Post(string uri, string postData)

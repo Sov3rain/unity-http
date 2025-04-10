@@ -21,6 +21,15 @@ namespace UnityHttp.Service
 		/// <param name="uri">The URI of the resource to retrieve via HTTP GET.</param>
 		/// <returns>A HttpRequest object configured to retrieve data from uri.</returns>
 		IHttpRequest GetTexture(string uri);
+		
+		/// <summary>
+		/// Creates a HttpRequest configured for HTTP GET.
+		/// The file will be downloaded to the specified path.
+		/// </summary>
+		/// <param name="uri">The URI of the resource to retrieve via HTTP GET.</param>
+		/// <param name="filePath">The path to the file to be downloaded.</param>
+		/// <returns>A HttpRequest object configured to retrieve data from uri.</returns>
+		IHttpRequest GetFile(string uri, string filePath);
 
 		/// <summary>
 		/// Creates a HttpRequest configured to send form data to a server via HTTP POST.
@@ -47,7 +56,7 @@ namespace UnityHttp.Service
 		IHttpRequest Post(string uri, Dictionary<string, string> formData);
 
 		/// <summary>
-		/// Creates a HttpRequest configured to send form multipart form to a server via HTTP POST.
+		/// Creates a HttpRequest configured to send a form multipart form to a server via HTTP POST.
 		/// </summary>
 		/// <param name="uri">The target URI to which form data will be transmitted.</param>
 		/// <param name="multipartForm">MultipartForm data for formatting and transmission to the remote server.</param>
@@ -59,16 +68,16 @@ namespace UnityHttp.Service
 		/// </summary>
 		/// <param name="uri">The target URI to which bytes will be transmitted.</param>
 		/// <param name="bytes">Byte array data.</param>
-		/// <param name="contentType">String representing the MIME type of the data (e.g. image/jpeg).</param>
+		/// <param name="contentType">String representing the MIME type of the data (e.g., image/jpeg).</param>
 		/// <returns>A HttpRequest configured to send raw bytes to a server via POST.</returns>
 		IHttpRequest Post(string uri, byte[] bytes, string contentType);
 
 		/// <summary>
 		/// Creates a HttpRequest configured to send json data to a server via HTTP POST.
 		/// </summary>
-		/// <param name="uri">The target URI to which json data will be transmitted.</param>
+		/// <param name="uri">The target URI to which JSON data will be transmitted.</param>
 		/// <param name="json">Json body data.</param>
-		/// <returns>A HttpRequest configured to send json data to uri via POST.</returns>
+		/// <returns>A HttpRequest configured to send JSON data to uri via POST.</returns>
 		IHttpRequest PostJson(string uri, string json);
 
 		/// <summary>
@@ -96,10 +105,10 @@ namespace UnityHttp.Service
 		IHttpRequest Delete(string uri);
 
 		/// <summary>
-		/// Creates a HttpRequest configured to send a HTTP HEAD request.
+		/// Creates a HttpRequest configured to send an HTTP HEAD request.
 		/// </summary>
-		/// <param name="uri">The URI to which to send a HTTP HEAD request.</param>
-		/// <returns>A HttpRequest configured to transmit a HTTP HEAD request.</returns>
+		/// <param name="uri">The URI to which to send an HTTP HEAD request.</param>
+		/// <returns>A HttpRequest configured to transmit an HTTP HEAD request.</returns>
 		IHttpRequest Head(string uri);
 
 		IEnumerator Send(IHttpRequest request, Action<HttpResponse> onSuccess = null, Action<HttpResponse> onError = null, Action<HttpResponse> onNetworkError = null);
