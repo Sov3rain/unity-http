@@ -16,6 +16,7 @@ namespace UnityHttp.Service
             string error,
             Texture texture,
             AssetBundle assetBundle,
+            AudioClip audioClip,
             Dictionary<string, string> headers)
         {
             Url = url;
@@ -26,6 +27,7 @@ namespace UnityHttp.Service
             Error = error;
             Texture = texture;
             AssetBundle = assetBundle;
+            AudioClip = audioClip;
             Headers = headers;
         }
 
@@ -36,6 +38,7 @@ namespace UnityHttp.Service
         public string Error { get; }
         public Texture Texture { get; }
         public AssetBundle AssetBundle { get; }
+        public AudioClip AudioClip { get; }
         public Dictionary<string, string> Headers { get; }
         
         public bool IsSuccessful => Result is Success;

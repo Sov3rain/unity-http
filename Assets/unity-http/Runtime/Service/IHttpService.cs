@@ -37,6 +37,14 @@ namespace UnityHttp.Service
 		/// <param name="uri">The URI where the AssetBundle is located</param>
 		/// <returns>An IHttpRequest instance configured for AssetBundle downloading</returns>
 		IHttpRequest GetAssetBundle(string uri);
+		
+		/// <summary>
+		/// Creates an HTTP request configured for downloading Unity AudioClips.
+		/// </summary>
+		/// <param name="uri">The URI where the AudioClip is located</param>
+		/// <param name="audioType">The AudioType of the AudioClip</param>
+		/// <returns>An IHttpRequest instance configured for AudioClip downloading</returns>
+		IHttpRequest GetAudioClip(string uri, AudioType audioType = AudioType.UNKNOWN);
 
 		/// <summary>
 		/// Creates a HttpRequest configured to send form data to a server via HTTP POST.

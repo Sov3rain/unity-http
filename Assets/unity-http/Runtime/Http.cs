@@ -113,6 +113,12 @@ namespace UnityHttp
         {
             return Instance.service.GetAssetBundle(uri);
         }
+        
+        /// <see cref="IHttpService.GetAudioClip"/>
+        public static IHttpRequest GetAudioClip(string uri, AudioType audioType = AudioType.UNKNOWN)
+        {
+            return Instance.service.GetAudioClip(uri, audioType);
+        }
 
         /// <see cref="IHttpService.Post(string, string)"/>
         public static IHttpRequest Post(string uri, string postData)

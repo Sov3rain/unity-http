@@ -32,6 +32,11 @@ namespace UnityHttp.Service.Unity
             return new UnityHttpRequest(UnityWebRequestAssetBundle.GetAssetBundle(uri));
         }
 
+        public IHttpRequest GetAudioClip(string uri, AudioType audioType = AudioType.UNKNOWN)
+        {
+            return new UnityHttpRequest(UnityWebRequestMultimedia.GetAudioClip(uri, audioType));
+        }
+
         public IHttpRequest Post(string uri, string postData)
         {
             return new UnityHttpRequest(UnityWebRequest.PostWwwForm(uri, postData));
@@ -135,7 +140,8 @@ namespace UnityHttp.Service.Unity
             error: req.error,
             headers: req.GetResponseHeaders(),
             texture: (req.downloadHandler as DownloadHandlerTexture)?.texture,
-            assetBundle: (req.downloadHandler as DownloadHandlerAssetBundle)?.assetBundle
+            assetBundle: (req.downloadHandler as DownloadHandlerAssetBundle)?.assetBundle,
+            audioClip: (req.downloadHandler as DownloadHandlerAudioClip)?.audioClip
         );
     }
 }
