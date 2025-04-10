@@ -27,6 +27,11 @@ namespace UnityHttp.Service.Unity
             return Get(uri).OnSuccess(res => HttpUtils.WriteFile(res.Data, filePath));
         }
 
+        public IHttpRequest GetAssetBundle(string uri)
+        {
+            return new UnityHttpRequest(UnityWebRequestAssetBundle.GetAssetBundle(uri));
+        }
+
         public IHttpRequest Post(string uri, string postData)
         {
             return new UnityHttpRequest(UnityWebRequest.PostWwwForm(uri, postData));
@@ -129,7 +134,8 @@ namespace UnityHttp.Service.Unity
             text: req.downloadHandler?.text,
             error: req.error,
             headers: req.GetResponseHeaders(),
-            texture: (req.downloadHandler as DownloadHandlerTexture)?.texture
+            texture: (req.downloadHandler as DownloadHandlerTexture)?.texture,
+            assetBundle: (req.downloadHandler as DownloadHandlerAssetBundle)?.assetBundle
         );
     }
 }

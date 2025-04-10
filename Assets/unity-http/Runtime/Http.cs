@@ -107,6 +107,12 @@ namespace UnityHttp
         {
             return Instance.service.GetFile(uri, filePath);
         }
+        
+        /// <see cref="IHttpService.GetAssetBundle"/>
+        public static IHttpRequest GetAssetBundle(string uri)
+        {
+            return Instance.service.GetAssetBundle(uri);
+        }
 
         /// <see cref="IHttpService.Post(string, string)"/>
         public static IHttpRequest Post(string uri, string postData)

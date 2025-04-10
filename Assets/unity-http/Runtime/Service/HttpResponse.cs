@@ -15,6 +15,7 @@ namespace UnityHttp.Service
             string text,
             string error,
             Texture texture,
+            AssetBundle assetBundle,
             Dictionary<string, string> headers)
         {
             Url = url;
@@ -24,6 +25,7 @@ namespace UnityHttp.Service
             Text = text;
             Error = error;
             Texture = texture;
+            AssetBundle = assetBundle;
             Headers = headers;
         }
 
@@ -33,6 +35,7 @@ namespace UnityHttp.Service
         public string Text { get; }
         public string Error { get; }
         public Texture Texture { get; }
+        public AssetBundle AssetBundle { get; }
         public Dictionary<string, string> Headers { get; }
         
         public bool IsSuccessful => Result is Success;

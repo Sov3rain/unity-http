@@ -30,6 +30,13 @@ namespace UnityHttp.Service
 		/// <param name="filePath">The path to the file to be downloaded.</param>
 		/// <returns>A HttpRequest object configured to retrieve data from uri.</returns>
 		IHttpRequest GetFile(string uri, string filePath);
+		
+		/// <summary>
+		/// Creates an HTTP request configured for downloading Unity AssetBundles.
+		/// </summary>
+		/// <param name="uri">The URI where the AssetBundle is located</param>
+		/// <returns>An IHttpRequest instance configured for AssetBundle downloading</returns>
+		IHttpRequest GetAssetBundle(string uri);
 
 		/// <summary>
 		/// Creates a HttpRequest configured to send form data to a server via HTTP POST.
