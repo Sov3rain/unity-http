@@ -10,7 +10,7 @@ namespace UnityHttp
 {
     /// <summary>
     /// A utility class for http.
-    /// <see cref="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"/>
+    /// <see href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"/>
     /// </summary>
     public static class HttpUtils
     {
